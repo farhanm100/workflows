@@ -3,5 +3,7 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  hello:
-    uses: farhan-TheITguy/hello-action/.github/actions/hello@main
+  greet:
+    name: Greet someone
+    steps:
+      - uses: farhan-TheITguy/hello-action/.github/actions/hello@main
