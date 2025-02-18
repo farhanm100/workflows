@@ -5,5 +5,3 @@ on:
 jobs:
   hello:
     uses: farhan-TheITguy/hello-action/.github/actions/hello@main
-    with:
-      config-path: .github/labeler.yml
