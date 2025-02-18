@@ -1,0 +1,19 @@
+name: hello
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      who-to-greet:
+        required: true
+        type: string
+        default: 'World'
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v4
+      - id: foo
+        uses: ./.github/actions/hello
+        with:
+          who-to-greet: 'Mona the Octocat'
