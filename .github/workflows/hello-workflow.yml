@@ -4,10 +4,6 @@ on:
   workflow_dispatch:
 jobs:
   hello:
-    uses: farhan-TheITguy/hello-action/.github/workflows/hello.yml@main
+    uses: farhan-TheITguy/hello-action/.github/actions/hello@main
     with:
-      who-to-greet: 'Mona the Octocat'
-  bye:
-    uses: ffarhan-TheITguy/hello-action/.github/workflows/bye.yml@main
-    with:
-      who-to-greet: 'Mona the Octocat'
+      config-path: .github/labeler.yml
