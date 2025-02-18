@@ -7,7 +7,3 @@ jobs:
     uses: farhan-TheITguy/hello-action/.github/workflows/hello.yml@main
     with:
       who-to-greet: 'Mona the Octocat'
-  bye:
-    uses: farhan-TheITguy/hello-action/.github/workflows/bye.yml@main
-    with:
-      who-to-greet: 'Mona the Octocat'
