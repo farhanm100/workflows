@@ -6,3 +6,5 @@ jobs:
   call-workflow-passing-data:
     uses: farhan-TheITguy/hello-action/.github/workflows/hello.yml@main
     secrets: inherit
+    with:
+      who-to-greet: 'Farhan'
