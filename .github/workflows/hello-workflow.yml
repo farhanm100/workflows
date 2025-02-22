@@ -3,15 +3,6 @@ on:
   push:
   workflow_dispatch:
 jobs:
-    prefix-db:
-      name: get, release or seed
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: prefix-db
-          uses: farhan-TheITguy/hello-action@main
-          with:
-            deployment-type: supersite
-            operation: release
+  call-workflow-passing-data:
+    uses: farhan-TheITguy/hello-action/.github/workflows/hello.yml@main
+    secrets: inherit
