@@ -7,8 +7,16 @@ on:
         type: string
         description: site or supersite
         default: site
-        
+
 jobs:
+  pre:
+    name: pre
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "Here I am printing the secrets from caller"
+          echo "Password: ${{ secrets.NEW_PASS }}"
   call-workflow-passing-data:
     uses: farhan-TheITguy/hello-action/.github/workflows/get-prefix.yml@main
     secrets: inherit
