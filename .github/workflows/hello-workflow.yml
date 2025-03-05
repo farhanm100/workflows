@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   call-workflow-passing-data:
-    uses: farhan-TheITguy/hello-action/.github/workflows/hello.yml@main
+    uses: farhan-TheITguy/hello-action/.github/workflows/get-prefix.yml@main
     secrets: inherit
     with:
-      who-to-greet: 'Farhan'
+      deployment-type: 'supersite'
