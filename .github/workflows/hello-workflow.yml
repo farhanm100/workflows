@@ -2,6 +2,11 @@ name: Remote workflow
 on:
   push:
   workflow_dispatch:
+    inputs:
+      deployment-type:
+        type: string
+        description: site or supersite
+        default: site
 jobs:
   call-workflow-passing-data:
     uses: farhan-TheITguy/hello-action/.github/workflows/get-prefix.yml@main
