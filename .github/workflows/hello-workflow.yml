@@ -19,7 +19,6 @@ jobs:
           echo "Password: ${{ secrets.NEW_PASS }}"
   call-workflow-passing-data:
     uses: farhan-TheITguy/hello-action/.github/workflows/get-prefix.yml@main
-    secrets:
-      NEW_PASS: ${{ secrets.NEW_PASS }}
+    secrets: inherit
     with:
       deployment-type: 'supersite'
