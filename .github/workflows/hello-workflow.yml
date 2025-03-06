@@ -19,6 +19,7 @@ jobs:
   post:
     name: pre
     runs-on: ubuntu-latest
+    needs: [get-prefix]
     env:
       prefix: ${{ needs.get-prefix.outputs.environment-prefix }}
     steps:
