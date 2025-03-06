@@ -9,16 +9,21 @@ on:
         default: site
 
 jobs:
-  pre:
-    name: pre
-    runs-on: ubuntu-latest
-    steps:
-      - shell: bash
-        run: |
-          echo "Here I am printing the secrets from caller"
-          echo "Password: ${{ secrets.NEW_PASS }}"
-  call-workflow-passing-data:
+
+  get-prefix:
     uses: farhan-TheITguy/hello-action/.github/workflows/get-prefix.yml@main
     secrets: inherit
     with:
       deployment-type: 'supersite'
+
+  post:
+    name: pre
+    runs-on: ubuntu-latest
+    env:
+      prefix: ${{ needs.get-prefix.outputs.environment-prefix }}
+    steps:
+      - shell: bash
+        run: |
+          echo "Here I am printing the secrets and prefix from caller"
+          echo "Password: ${{ secrets.NEW_PASS }}"
+          echo "Prefix: ${{ env.prefix }}"
